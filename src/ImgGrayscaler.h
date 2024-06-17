@@ -3,7 +3,7 @@
   Author: Alice C. Griffith
   Date: 2024
 
-  Description: 
+  Description: Class for grayscaling an image
 */
 
 #ifndef IMG_GRAYSCALER_H

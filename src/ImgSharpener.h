@@ -3,7 +3,7 @@
   Author: Alice C. Griffith
   Date: 2024
 
-  Description: 
+  Description: Class for sharpening an image
 */
 
 #ifndef IMG_SHARPENER_H

@@ -3,7 +3,7 @@
   Author: Alice C. Griffith
   Date: 2024
 
-  Description: 
+  Description: Class for detecting edges in an image
 */
 
 #ifndef IMG_EDGE_DETECTOR_H

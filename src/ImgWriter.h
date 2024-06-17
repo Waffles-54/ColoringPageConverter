@@ -3,7 +3,7 @@
   Author: Alice C. Griffith
   Date: 2024
 
-  Description: 
+  Description: Class for writing an image to a directory (May be unncecesarry)
 */
 
 #ifndef IMG_WRITER_H

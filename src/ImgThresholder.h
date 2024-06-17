@@ -3,7 +3,7 @@
   Author: Alice C. Griffith
   Date: 2024
 
-  Description: 
+  Description: Class for applying a static threshold limiter to an image
 */
 
 #ifndef IMG_THRESHOLDER_H

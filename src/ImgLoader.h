@@ -3,7 +3,7 @@
   Author: Alice C. Griffith
   Date: 2024
 
-  Description: 
+  Description: Class for loading an image into a program (May be unncecesarry)
 */
 
 #ifndef IMG_LOADER_H
