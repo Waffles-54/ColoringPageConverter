@@ -6,9 +6,8 @@
   Description: Class for loading an image into a program (May be unncecesarry)
 */
 
-#ifndef IMG_LOADER_H
-#define IMG_LOADER_H
+#pragma once
+class ImgLoader
+{
+};
 
-// #TODO(Waffles_54)
-
-#endif  // IMG_LOADER_H

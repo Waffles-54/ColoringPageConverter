@@ -6,9 +6,8 @@
   Description: Class for grayscaling an image
 */
 
-#ifndef IMG_GRAYSCALER_H
-#define IMG_GRAYSCALER_H
+#pragma once
+class ImgGrayscaler
+{
+};
 
-// #TODO(Waffles_54)
-
-#endif  // IMG_GRAYSCALER_H

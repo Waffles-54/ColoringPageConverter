@@ -6,9 +6,8 @@
   Description: Class for inverting an image
 */
 
-#ifndef IMG_INVERTER_H
-#define IMG_INVERTER_H
+#pragma once
+class ImgInverter
+{
+};
 
-// #TODO(Waffles_54)
-
-#endif  // IMG_INVERTER_H

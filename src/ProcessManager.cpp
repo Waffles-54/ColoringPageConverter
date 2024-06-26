@@ -11,15 +11,13 @@
 
 using namespace std;
 
-class ProcessManager {
+void ProcessManager::entry() {
+    cout << "Hello proccess manager\n";
+}
 
-    int main(int argc, char* argv[]) {
-        // Entry point of program
-        cout << "Hello World\n";
-
-        // If any arguments were passed, check the paramaters
-        // If no arguments were passed, prompts for input path of images to process
-        // I will need to load images depending on the platform of the system the program is run on
-
-    }
-};
+int main() {
+    // Your code here
+    ProcessManager pm;
+    pm.entry();
+    return 0; // Optional, but conventionally used
+}

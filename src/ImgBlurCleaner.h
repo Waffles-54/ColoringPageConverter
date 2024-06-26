@@ -6,10 +6,9 @@
   Description: Class for handling cleaning up image blur
 */
 
-#ifndef IMG_BLUR_CLEANER_H
-#define IMG_BLUR_CLEANER_H
+#pragma once
+class ImgBlurCleaner
+{
 
-// #TODO(Waffles_54)
+};
 
-
-#endif  // IMG_BLUR_CLEANER_H

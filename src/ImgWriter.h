@@ -6,9 +6,8 @@
   Description: Class for writing an image to a directory (May be unncecesarry)
 */
 
-#ifndef IMG_WRITER_H
-#define IMG_WRITER_H
+#pragma once
+class ImgWriter
+{
+};
 
-// #TODO(Waffles_54)
-
-#endif  // IMG_WRITER_H

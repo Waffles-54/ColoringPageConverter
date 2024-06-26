@@ -6,9 +6,8 @@
   Description: Class for detecting edges in an image
 */
 
-#ifndef IMG_EDGE_DETECTOR_H
-#define IMG_EDGE_DETECTOR_H
+#pragma once
+class ImgEdgeDetector
+{
+};
 
-// #TODO(Waffles_54)
-
-#endif  // IMG_EDGE_DETECTOR_H
