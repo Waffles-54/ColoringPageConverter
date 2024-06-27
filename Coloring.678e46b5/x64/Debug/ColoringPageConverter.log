@@ -1,3 +1,0 @@
-﻿  ProcessManager.cpp
-F:\Github\ColoringPageConverter\src\ProcessManager.cpp(56,17): warning C4305: 'return': truncation from 'int' to 'bool'
-  ColoringPageConverter.vcxproj -> F:\Github\ColoringPageConverter\x64\Debug\ColoringPageConverter.exe

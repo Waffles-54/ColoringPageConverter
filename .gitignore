@@ -36,3 +36,7 @@
 *.jpg
 *.jpeg
 *.tlog
+
+# Folders
+x64\
+x32\
