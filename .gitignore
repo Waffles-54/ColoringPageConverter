@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Testing
+*.png
+*.jpg
+*.jpeg
+*.tlog

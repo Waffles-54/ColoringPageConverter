@@ -5,6 +5,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\src\\ProcessManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:src\\ProcessManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\src\\ProcessManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:src\\ProcessManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\lib\\stb_image_write.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:lib\\stb_image_write.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\lib\\stb_image.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:lib\\stb_image.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -24,9 +36,69 @@
               "RelativeDocumentMoniker": "src\\ProcessManager.cpp",
               "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\ProcessManager.cpp",
               "RelativeToolTip": "src\\ProcessManager.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAyAAAA",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAUwFAAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-06-26T04:10:35.034Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "e69c5d25-7a6f-4806-a248-87da1bfa043d",
+        "Display": 1,
+        "X": -385,
+        "Y": 40,
+        "Width": 897,
+        "Height": 766,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "stb_image.h",
+              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\lib\\stb_image.h",
+              "RelativeDocumentMoniker": "lib\\stb_image.h",
+              "ToolTip": "F:\\Github\\ColoringPageConverter\\lib\\stb_image.h",
+              "RelativeToolTip": "lib\\stb_image.h",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAAAGYAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-27T20:52:38.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "stb_image_write.h",
+              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\lib\\stb_image_write.h",
+              "RelativeDocumentMoniker": "lib\\stb_image_write.h",
+              "ToolTip": "F:\\Github\\ColoringPageConverter\\lib\\stb_image_write.h",
+              "RelativeToolTip": "lib\\stb_image_write.h",
+              "ViewState": "AQIAAJoCAAAAAAAAAAAwwBoDAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-27T20:58:15.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProcessManager.h",
+              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\src\\ProcessManager.h",
+              "RelativeDocumentMoniker": "src\\ProcessManager.h",
+              "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\ProcessManager.h",
+              "RelativeToolTip": "src\\ProcessManager.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-27T17:59:51.062Z",
               "EditorCaption": ""
             }
           ]
