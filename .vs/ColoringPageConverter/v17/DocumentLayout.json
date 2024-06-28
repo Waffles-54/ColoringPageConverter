@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "F:\\Github\\ColoringPageConverter\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\src\\ImgSharpener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:src\\ImgSharpener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\src\\ProcessManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:src\\ProcessManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\src\\image_data.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:src\\image_data.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\src\\ProcessManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:src\\ProcessManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\src\\ImgGrayscaler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:src\\ImgGrayscaler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\src\\ImgGrayscaler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:src\\ImgGrayscaler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\src\\ImgSharpener.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:src\\ImgSharpener.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,77 +26,64 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProcessManager.h",
-              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\src\\ProcessManager.h",
-              "RelativeDocumentMoniker": "src\\ProcessManager.h",
-              "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\ProcessManager.h",
-              "RelativeToolTip": "src\\ProcessManager.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-28T18:44:40.786Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProcessManager.cpp",
-              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\src\\ProcessManager.cpp",
-              "RelativeDocumentMoniker": "src\\ProcessManager.cpp",
-              "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\ProcessManager.cpp",
-              "RelativeToolTip": "src\\ProcessManager.cpp",
-              "ViewState": "AQIAAEUAAAAAAAAAAAASwEoAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-28T17:28:26.889Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ImgGrayscaler.cpp",
-              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\src\\ImgGrayscaler.cpp",
-              "RelativeDocumentMoniker": "src\\ImgGrayscaler.cpp",
-              "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\ImgGrayscaler.cpp",
-              "RelativeToolTip": "src\\ImgGrayscaler.cpp",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABwAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-28T16:03:23.416Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ImgGrayscaler.h",
-              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\src\\ImgGrayscaler.h",
-              "RelativeDocumentMoniker": "src\\ImgGrayscaler.h",
-              "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\ImgGrayscaler.h",
-              "RelativeToolTip": "src\\ImgGrayscaler.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-27T22:19:48.617Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "image_data.h",
-              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\src\\image_data.h",
-              "RelativeDocumentMoniker": "src\\image_data.h",
-              "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\image_data.h",
-              "RelativeToolTip": "src\\image_data.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAASAAAA",
+              "Title": "ProcessManager.cpp",
+              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\src\\ProcessManager.cpp",
+              "RelativeDocumentMoniker": "src\\ProcessManager.cpp",
+              "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\ProcessManager.cpp",
+              "RelativeToolTip": "src\\ProcessManager.cpp",
+              "ViewState": "AQIAADQAAAAAAAAAAAAWwFIAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-28T17:28:26.889Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ImgGrayscaler.cpp",
+              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\src\\ImgGrayscaler.cpp",
+              "RelativeDocumentMoniker": "src\\ImgGrayscaler.cpp",
+              "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\ImgGrayscaler.cpp",
+              "RelativeToolTip": "src\\ImgGrayscaler.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-28T19:55:17.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ImgSharpener.h",
+              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\src\\ImgSharpener.h",
+              "RelativeDocumentMoniker": "src\\ImgSharpener.h",
+              "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\ImgSharpener.h",
+              "RelativeToolTip": "src\\ImgSharpener.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-28T16:34:05.623Z",
+              "WhenOpened": "2024-06-28T19:48:23.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ImgSharpener.cpp",
+              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\src\\ImgSharpener.cpp",
+              "RelativeDocumentMoniker": "src\\ImgSharpener.cpp",
+              "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\ImgSharpener.cpp",
+              "RelativeToolTip": "src\\ImgSharpener.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-28T19:48:22.982Z",
               "EditorCaption": ""
             }
           ]

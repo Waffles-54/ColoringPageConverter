@@ -7,7 +7,6 @@
 */
 
 #include "ImgGrayscaler.h"
-#include <iostream>
 
 void ImgGrayscaler::grayscaleImage(image_data::image_t* img) {
 	// Grayscale the image using an averaging technique [(R+G+B)/3]

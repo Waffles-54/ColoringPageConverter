@@ -23,7 +23,4 @@ class image_data {
 			int height;
 			int components;
 		};
-		//struct pixel_data{
-
-		//};
 };

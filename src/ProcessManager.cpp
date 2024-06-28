@@ -9,6 +9,8 @@
 #include "ProcessManager.h"
 #include "image_data.h"
 #include "ImgGrayscaler.h"
+#include "ImgSharpener.h"
+
 
 // Pre-Proccessors for stb_image.h
 #define STB_IMAGE_IMPLEMENTATION
@@ -40,6 +42,8 @@ void ProcessManager::initiateThreads(vector<string> paths) {
 bool ProcessManager::processThread(string path) {
     image_data::image_t* img = new image_data::image_t;
     ImgGrayscaler* imgGrayscaler = new ImgGrayscaler;
+    ImgSharpener* imgSharpener = new ImgSharpener;
+
 
     // Tokenize path (ext/filename)
     string token;
@@ -59,7 +63,7 @@ bool ProcessManager::processThread(string path) {
     // Setup image structure
     //img->full_path = path;
     img->filename = tokens.back();
-    img->out_path = "out\\" + tokens[1]; // staticly sets the output to the same directory #TODO(waffles_54)
+    img->out_path = "out\\" + tokens[1]; // staticly sets the output #TODO(waffles_54)
     img->width = 0;
     img->height = 0;
     img->components = 0;
@@ -72,24 +76,11 @@ bool ProcessManager::processThread(string path) {
         return false;
     }
 
-    // Process Phase #TODO (waffles_54)
-    // The return value from an image loader is an 'unsigned char *' which points
-    // to the pixel data, or NULL on an allocation failure or if the image is
-    // corrupt or invalid. The pixel data consists of *y (height) scanlines of *x (width) pixels,
-    // with each pixel consisting of N interleaved 8-bit components; 
-    // 
-    // the first pixel pointed to is top-left-most in the image. There is no padding between
-    // image scanlines or between pixels, regardless of format. The number of
-    // components N is 'desired_channels' if desired_channels is non-zero, or
-    // *channels_in_file otherwise. If desired_channels is non-zero,
-    // *channels_in_file has the number of components that _would_ have been
-    // output otherwise. E.g. if you set desired_channels to 4, you will always
-    // get RGBA output, but you can check *channels_in_file to see if it's trivially
-    // opaque because e.g. there were only 3 channels in the source image.
-
     // #TODO Seperate work into threads
+    imgSharpener->sharpenImage(img);
     imgGrayscaler->grayscaleImage(img);
     // Sharpen the image
+    
     // Clean up blur
     // Edge Detection
     // Thresholding
@@ -108,7 +99,7 @@ bool ProcessManager::processThread(string path) {
 int main(int argc, char* argv[]) {
         
     // Data setup
-    ProcessManager processmanager;
+    ProcessManager processManager;
 
     string userInput = "";
     vector<string> filepaths;
@@ -122,13 +113,15 @@ int main(int argc, char* argv[]) {
         // No arguments passed
         // Get the directory or image to
         cout << "Enter a list of files/directories to process\nSeperate entries with a space, Include the extension\n";
-        
-
         while (userInput.size() == 0) {
             getline(cin, userInput, '\n');
         }
     } else {
         // Arguments passed and need to be processed #TODO (Waffles_54)
+        for (int i = 1; i < argc; i++) {
+            userInput += argv[i] + ' ';
+        }
+        userInput.back() = '\0';
     }
 
     // Tokenize input
@@ -145,6 +138,6 @@ int main(int argc, char* argv[]) {
     }
     
     // Pass control to the processManager
-    processmanager.initiateThreads(filepaths);
+    processManager.initiateThreads(filepaths);
     return 0;
 }
