@@ -14,8 +14,8 @@ using namespace std;
 class image_data {
 	public:
 		struct image_t {
-			string full_path;
-			string ext;
+			//string full_path;
+			//string ext;
 			string filename;
 			string out_path;
 			unsigned char* imgData;

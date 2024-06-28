@@ -46,7 +46,7 @@ bool ProcessManager::processThread(string path) {
     vector<string> tokens;
     stringstream userStream(path);
 
-    while (getline(userStream, token, '.')) {
+    while (getline(userStream, token, '\\')) {
         tokens.push_back(token);
     }
 
@@ -57,16 +57,15 @@ bool ProcessManager::processThread(string path) {
     }
 
     // Setup image structure
-    img->full_path = path;
-    img->filename = tokens[0];
-    img->ext = tokens[1];
-    img->out_path = tokens[0] + "_o." + tokens[1]; // staticly sets the output to the same directory #TODO(waffles_54)
+    //img->full_path = path;
+    img->filename = tokens.back();
+    img->out_path = "out\\" + tokens[1]; // staticly sets the output to the same directory #TODO(waffles_54)
     img->width = 0;
     img->height = 0;
     img->components = 0;
 
     // Read phase
-    img->imgData = stbi_load(img->full_path.c_str(), &img->width, &img->height, &img->components, 0);
+    img->imgData = stbi_load(path.c_str(), &img->width, &img->height, &img->components, 0);
 
     if (img->imgData == nullptr) {
         std::cerr << "Failed to load " << path << endl;
@@ -123,6 +122,8 @@ int main(int argc, char* argv[]) {
         // No arguments passed
         // Get the directory or image to
         cout << "Enter a list of files/directories to process\nSeperate entries with a space, Include the extension\n";
+        
+
         while (userInput.size() == 0) {
             getline(cin, userInput, '\n');
         }
@@ -134,7 +135,13 @@ int main(int argc, char* argv[]) {
     string token;
     stringstream userStream(userInput);
     while (getline(userStream, token, ' ')) {
-        filepaths.push_back(token);
+        if (fs::is_directory(token)) {
+            for (const auto& entry : fs::directory_iterator(token)) {
+                filepaths.push_back(entry.path().string());
+            }
+        } else {
+            filepaths.push_back(token);
+        }
     }
     
     // Pass control to the processManager

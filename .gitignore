@@ -35,6 +35,7 @@
 *.png
 *.jpg
 *.jpeg
+*.gif
 *.tlog
 
 # Folders
