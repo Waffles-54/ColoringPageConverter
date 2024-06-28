@@ -7,6 +7,8 @@
 */
 
 #include "ProcessManager.h"
+#include "image_data.h"
+#include "ImgGrayscaler.h"
 
 // Pre-Proccessors for stb_image.h
 #define STB_IMAGE_IMPLEMENTATION
@@ -22,9 +24,6 @@
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
 
-
-using namespace std;
-
 void ProcessManager::initiateThreads(vector<string> paths) {
     vector<thread> work;
     // Generate threads
@@ -39,13 +38,14 @@ void ProcessManager::initiateThreads(vector<string> paths) {
 }
 
 bool ProcessManager::processThread(string path) {
-    //int x, y, n;
-    image_t* img = new image_t;
-    
-    // Tokenize path
+    image_data::image_t* img = new image_data::image_t;
+    ImgGrayscaler* imgGrayscaler = new ImgGrayscaler;
+
+    // Tokenize path (ext/filename)
     string token;
     vector<string> tokens;
     stringstream userStream(path);
+
     while (getline(userStream, token, '.')) {
         tokens.push_back(token);
     }
@@ -74,6 +74,27 @@ bool ProcessManager::processThread(string path) {
     }
 
     // Process Phase #TODO (waffles_54)
+    // The return value from an image loader is an 'unsigned char *' which points
+    // to the pixel data, or NULL on an allocation failure or if the image is
+    // corrupt or invalid. The pixel data consists of *y (height) scanlines of *x (width) pixels,
+    // with each pixel consisting of N interleaved 8-bit components; 
+    // 
+    // the first pixel pointed to is top-left-most in the image. There is no padding between
+    // image scanlines or between pixels, regardless of format. The number of
+    // components N is 'desired_channels' if desired_channels is non-zero, or
+    // *channels_in_file otherwise. If desired_channels is non-zero,
+    // *channels_in_file has the number of components that _would_ have been
+    // output otherwise. E.g. if you set desired_channels to 4, you will always
+    // get RGBA output, but you can check *channels_in_file to see if it's trivially
+    // opaque because e.g. there were only 3 channels in the source image.
+
+    // #TODO Seperate work into threads
+    imgGrayscaler->grayscaleImage(img);
+    // Sharpen the image
+    // Clean up blur
+    // Edge Detection
+    // Thresholding
+    // Inversion
 
 
     // Output phase
@@ -81,25 +102,14 @@ bool ProcessManager::processThread(string path) {
     
     // Cleanup phase
     stbi_image_free(img->imgData);
-    free(img);
     return true;
 }
 
 // Entry point of the program
 int main(int argc, char* argv[]) {
-    ////////////////////////////// Program Flow /////////////////////////////
-    // Load images as passed into the command line
-    // Grayscale the image
-    // Sharpen the image
-    // Clean up blur
-    // Edge Detection
-    // Thresholding
-    // Inversion
-    // Output (PNG)
-    //////////////////////////////////////////////////////////////////////////
         
     // Data setup
-    ProcessManager pm;
+    ProcessManager processmanager;
 
     string userInput = "";
     vector<string> filepaths;
@@ -128,6 +138,6 @@ int main(int argc, char* argv[]) {
     }
     
     // Pass control to the processManager
-    pm.initiateThreads(filepaths);
+    processmanager.initiateThreads(filepaths);
     return 0;
 }

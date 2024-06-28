@@ -38,5 +38,27 @@
 *.tlog
 
 # Folders
-x64\
-x32\
+x64/
+x32/
+.vs/
+.vs/ColoringPageConverter/FileContentIndex/25d30df7-525a-44cf-8129-70aa43a844f4.vsidx
+.vs/ColoringPageConverter/FileContentIndex/e3494970-010e-45b9-a08f-f32d8692f082.vsidx
+.vs/ColoringPageConverter/FileContentIndex/e7421424-b164-427f-8d59-c523a33efb09.vsidx
+.vs/ColoringPageConverter/v17/.suo
+.vs/ColoringPageConverter/v17/Browse.VC.db
+.vs/ColoringPageConverter/v17/DocumentLayout.json
+.vs/ColoringPageConverter/v17/ipch/AutoPCH/28b044321b2cba27/PROCESSMANAGER.ipch
+.vs/ColoringPageConverter/v17/ipch/AutoPCH/953e0807d3f9e2cf/IMGGRAYSCALER.ipch
+.vs/ColoringPageConverter/v17/ipch/AutoPCH/fc1200aff8721f07/IMGINVERTER.ipch
+.vs/ColoringPageConverter/FileContentIndex/25d30df7-525a-44cf-8129-70aa43a844f4.vsidx
+.vs/ColoringPageConverter/FileContentIndex/e3494970-010e-45b9-a08f-f32d8692f082.vsidx
+.vs/ColoringPageConverter/FileContentIndex/e7421424-b164-427f-8d59-c523a33efb09.vsidx
+.vs/ColoringPageConverter/v17/.suo
+.vs/ColoringPageConverter/v17/Browse.VC.db
+.vs/ColoringPageConverter/v17/DocumentLayout.json
+.vs/ColoringPageConverter/v17/ipch/AutoPCH/28b044321b2cba27/PROCESSMANAGER.ipch
+.vs/ColoringPageConverter/v17/ipch/AutoPCH/953e0807d3f9e2cf/IMGGRAYSCALER.ipch
+.vs/ColoringPageConverter/v17/ipch/AutoPCH/fc1200aff8721f07/IMGINVERTER.ipch
+.vs/ColoringPageConverter/v17/Browse.VC.db
+.vs/ColoringPageConverter/v17/ipch/AutoPCH/28b044321b2cba27/PROCESSMANAGER.ipch
+.vs/ColoringPageConverter/v17/ipch/AutoPCH/953e0807d3f9e2cf/IMGGRAYSCALER.ipch
