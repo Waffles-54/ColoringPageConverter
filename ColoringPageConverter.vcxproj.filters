@@ -21,16 +21,10 @@
     <ClInclude Include="src\ImgBlurCleaner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ImgWriter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\ImgThresholder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\ImgSharpener.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ImgLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\ImgInverter.h">
@@ -45,7 +39,10 @@
     <ClInclude Include="lib\stb_image_write.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\image_data.h">
+    <ClInclude Include="imgData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -56,16 +53,10 @@
     <ClCompile Include="src\ImgBlurCleaner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ImgWriter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\ImgThresholder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\ImgSharpener.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ImgLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\ImgInverter.cpp">
@@ -78,6 +69,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lib\stb_image.h">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imgData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

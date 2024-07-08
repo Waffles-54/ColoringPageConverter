@@ -8,7 +8,7 @@
 
 #include "ImgGrayscaler.h"
 
-void ImgGrayscaler::grayscaleImage(image_data::image_t* img) {
+void ImgGrayscaler::grayscaleImage(ImgData::image_t* img) {
 	// Grayscale the image using an averaging technique [(R+G+B)/3]
 	int pixDensity = img->height * img->width * img->components;
 	int avg;
@@ -17,13 +17,13 @@ void ImgGrayscaler::grayscaleImage(image_data::image_t* img) {
 		// Calculate averege pixel value
 		avg = 0;
 		for (int j = 0; j < img->components; j++) {
-			avg += img->imgData[i+j];
+			avg += img->imgDataLinear[i+j];
 		}
 		avg /= img->components;
 
 		// apply pixel avege across all components
 		for (int j = 0; j < img->components; j++) {
-			img->imgData[i + j] = avg;
+			img->imgDataLinear[i + j] = avg;
 		}
 	}
 }

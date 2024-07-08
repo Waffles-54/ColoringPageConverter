@@ -7,14 +7,14 @@
 */
 
 #pragma once
-#include "image_data.h"
+#include "ImgData.h"
 
 #define KERNEL_SIZE 3
 
 class ImgSharpener
 {
 	public:
-		void sharpenImage(image_data::image_t* img);
+		void sharpenImage(ImgData::image_t* img);
 	private:
 		const int sharpKernal[3][3] = {
 			{0, -1, 0}, 

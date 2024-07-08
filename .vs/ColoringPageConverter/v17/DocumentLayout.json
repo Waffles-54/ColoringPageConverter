@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "F:\\Github\\ColoringPageConverter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\src\\ImgSharpener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:src\\ImgSharpener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\src\\ProcessManager.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:src\\ProcessManager.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\src\\ProcessManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:src\\ProcessManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\src\\ImgGrayscaler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:src\\ImgGrayscaler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\src\\ImgSharpener.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:src\\ImgSharpener.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|F:\\Github\\ColoringPageConverter\\src\\imgData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{678E46B5-E56A-4AEF-B5E0-7F47C4F820E8}|ColoringPageConverter.vcxproj|solutionrelative:src\\imgData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,64 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProcessManager.cpp",
-              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\src\\ProcessManager.cpp",
-              "RelativeDocumentMoniker": "src\\ProcessManager.cpp",
-              "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\ProcessManager.cpp",
-              "RelativeToolTip": "src\\ProcessManager.cpp",
-              "ViewState": "AQIAADQAAAAAAAAAAAAWwFIAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-28T17:28:26.889Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 2,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ImgGrayscaler.cpp",
-              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\src\\ImgGrayscaler.cpp",
-              "RelativeDocumentMoniker": "src\\ImgGrayscaler.cpp",
-              "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\ImgGrayscaler.cpp",
-              "RelativeToolTip": "src\\ImgGrayscaler.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-28T19:55:17.785Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ImgSharpener.h",
-              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\src\\ImgSharpener.h",
-              "RelativeDocumentMoniker": "src\\ImgSharpener.h",
-              "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\ImgSharpener.h",
-              "RelativeToolTip": "src\\ImgSharpener.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAATAAAA",
+              "Title": "ImgData.h",
+              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\src\\ImgData.h",
+              "RelativeDocumentMoniker": "src\\ImgData.h",
+              "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\ImgData.h",
+              "RelativeToolTip": "src\\ImgData.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-28T19:48:23.902Z",
+              "WhenOpened": "2024-07-08T18:37:12.9Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ImgSharpener.cpp",
-              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\src\\ImgSharpener.cpp",
-              "RelativeDocumentMoniker": "src\\ImgSharpener.cpp",
-              "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\ImgSharpener.cpp",
-              "RelativeToolTip": "src\\ImgSharpener.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA4AAAA",
+              "Title": "ProcessManager.cpp",
+              "DocumentMoniker": "F:\\Github\\ColoringPageConverter\\src\\ProcessManager.cpp",
+              "RelativeDocumentMoniker": "src\\ProcessManager.cpp",
+              "ToolTip": "F:\\Github\\ColoringPageConverter\\src\\ProcessManager.cpp",
+              "RelativeToolTip": "src\\ProcessManager.cpp",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACQAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-28T19:48:22.982Z",
+              "WhenOpened": "2024-07-08T18:20:47.405Z",
               "EditorCaption": ""
             }
           ]

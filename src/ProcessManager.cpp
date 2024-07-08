@@ -7,7 +7,7 @@
 */
 
 #include "ProcessManager.h"
-#include "image_data.h"
+#include "ImgData.h"
 #include "ImgGrayscaler.h"
 #include "ImgSharpener.h"
 
@@ -40,10 +40,9 @@ void ProcessManager::initiateThreads(vector<string> paths) {
 }
 
 bool ProcessManager::processThread(string path) {
-    image_data::image_t* img = new image_data::image_t;
+    ImgData::image_t* img = new ImgData::image_t;
     ImgGrayscaler* imgGrayscaler = new ImgGrayscaler;
     ImgSharpener* imgSharpener = new ImgSharpener;
-
 
     // Tokenize path (ext/filename)
     string token;
@@ -69,9 +68,9 @@ bool ProcessManager::processThread(string path) {
     img->components = 0;
 
     // Read phase
-    img->imgData = stbi_load(path.c_str(), &img->width, &img->height, &img->components, 0);
+    img->imgDataLinear = stbi_load(path.c_str(), &img->width, &img->height, &img->components, 0);
 
-    if (img->imgData == nullptr) {
+    if (img->imgDataLinear == nullptr) {
         std::cerr << "Failed to load " << path << endl;
         return false;
     }
@@ -88,10 +87,10 @@ bool ProcessManager::processThread(string path) {
 
 
     // Output phase
-    stbi_write_jpg(img->out_path.c_str(), img->width, img->height, img->components, img->imgData, 100);
+    stbi_write_jpg(img->out_path.c_str(), img->width, img->height, img->components, img->imgDataLinear, 100);
     
     // Cleanup phase
-    stbi_image_free(img->imgData);
+    stbi_image_free(img->imgDataLinear);
     return true;
 }
 

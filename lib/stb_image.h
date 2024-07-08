@@ -4909,14 +4909,14 @@ static int stbi__create_png_image_raw(stbi__png* a, stbi_uc* raw, stbi__uint32 r
     return 1;
 }
 
-static int stbi__create_png_image(stbi__png* a, stbi_uc* image_data, stbi__uint32 image_data_len, int out_n, int depth, int color, int interlaced)
+static int stbi__create_png_image(stbi__png* a, stbi_uc* ImgData, stbi__uint32 imgData_len, int out_n, int depth, int color, int interlaced)
 {
     int bytes = (depth == 16 ? 2 : 1);
     int out_bytes = out_n * bytes;
     stbi_uc* final;
     int p;
     if (!interlaced)
-        return stbi__create_png_image_raw(a, image_data, image_data_len, out_n, a->s->img_x, a->s->img_y, depth, color);
+        return stbi__create_png_image_raw(a, ImgData, imgData_len, out_n, a->s->img_x, a->s->img_y, depth, color);
 
     // de-interlacing
     final = (stbi_uc*)stbi__malloc_mad3(a->s->img_x, a->s->img_y, out_bytes, 0);
@@ -4932,7 +4932,7 @@ static int stbi__create_png_image(stbi__png* a, stbi_uc* image_data, stbi__uint3
         y = (a->s->img_y - yorig[p] + yspc[p] - 1) / yspc[p];
         if (x && y) {
             stbi__uint32 img_len = ((((a->s->img_n * x * depth) + 7) >> 3) + 1) * y;
-            if (!stbi__create_png_image_raw(a, image_data, image_data_len, out_n, x, y, depth, color)) {
+            if (!stbi__create_png_image_raw(a, ImgData, imgData_len, out_n, x, y, depth, color)) {
                 STBI_FREE(final);
                 return 0;
             }
@@ -4945,8 +4945,8 @@ static int stbi__create_png_image(stbi__png* a, stbi_uc* image_data, stbi__uint3
                 }
             }
             STBI_FREE(a->out);
-            image_data += img_len;
-            image_data_len -= img_len;
+            ImgData += img_len;
+            imgData_len -= img_len;
         }
     }
     a->out = final;

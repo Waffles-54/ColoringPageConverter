@@ -7,11 +7,11 @@
 */
 
 #pragma once
-#include "image_data.h"
+#include "ImgData.h"
 
 class ImgGrayscaler
 {
 	public:
-		void grayscaleImage(image_data::image_t* img);
+		void grayscaleImage(ImgData::image_t* img);
 };
 

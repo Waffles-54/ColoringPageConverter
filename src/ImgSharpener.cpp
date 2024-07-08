@@ -8,7 +8,7 @@
 
 #include "ImgSharpener.h"
 
-void ImgSharpener::sharpenImage(image_data::image_t* img) {
+void ImgSharpener::sharpenImage(ImgData::image_t* img) {
 	int pixDensity = img->height * img->width * img->components;
     int sum, x, y;
 	for (int i = 0; i < pixDensity; i += img->components) {
@@ -19,12 +19,12 @@ void ImgSharpener::sharpenImage(image_data::image_t* img) {
             for (int kx = -1; kx <= 1; ++kx) {
                 int ny = std::min(std::max(y + ky, 0), img->height - 1);
                 int nx = std::min(std::max(x + kx, 0), img->width - 1);
-                int pixel = img->imgData[(ny * img->width + nx) * img->components];
+                int pixel = img->imgDataLinear[(ny * img->width + nx) * img->components];
                 sum += pixel * sharpKernal[ky + 1][kx + 1];
             }
         }
         // Clamp the result to [0, 255]
         sum = std::min(std::max(sum, 0), 255);
-        img->imgData[(y * img->width + x) * img->components] = sum;
+        img->imgDataLinear[(y * img->width + x) * img->components] = sum;
 	}
 }

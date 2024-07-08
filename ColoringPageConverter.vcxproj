@@ -129,26 +129,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\image_data.h" />
+    <ClInclude Include="src\ImgData.h" />
     <ClInclude Include="src\ImgEdgeDetector.h" />
     <ClInclude Include="src\ImgGrayscaler.h" />
     <ClInclude Include="src\ImgInverter.h" />
-    <ClInclude Include="src\ImgLoader.h" />
     <ClInclude Include="src\ImgSharpener.h" />
     <ClInclude Include="src\ImgThresholder.h" />
-    <ClInclude Include="src\ImgWriter.h" />
     <ClInclude Include="lib\stb_image_write.h" />
     <ClInclude Include="src\ImgBlurCleaner.h" />
     <ClInclude Include="src\ProcessManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ImgData.cpp" />
     <ClCompile Include="src\ImgEdgeDetector.cpp" />
     <ClCompile Include="src\ImgGrayscaler.cpp" />
     <ClCompile Include="src\ImgInverter.cpp" />
-    <ClCompile Include="src\ImgLoader.cpp" />
     <ClCompile Include="src\ImgSharpener.cpp" />
     <ClCompile Include="src\ImgThresholder.cpp" />
-    <ClCompile Include="src\ImgWriter.cpp" />
     <ClCompile Include="lib\stb_image.h" />
     <ClCompile Include="src\ImgBlurCleaner.cpp" />
     <ClCompile Include="src\ProcessManager.cpp" />
