@@ -15,15 +15,16 @@ class ImgData
 {
 	public:
 		struct image_t {
-			//string full_path;
-			//string ext;
 			string filename;
 			string out_path;
 			unsigned char* imgDataLinear;
-			int** ingDataMatrix;
+			int** imgDataMatrix;
 			int width;
 			int height;
 			int components;
 		};
+
+		void generateMatrix(image_t* img);
+		void cleanMemory(image_t* img);
 };
 

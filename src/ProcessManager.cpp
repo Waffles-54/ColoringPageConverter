@@ -33,13 +33,14 @@ void ProcessManager::initiateThreads(vector<string> paths) {
         work.push_back(thread(&ProcessManager::processThread, this, path));
     }
 
-    // Syncronize threads
+    // Synchronize threads
     for (int i = 0; i < work.size(); i++) {
         work[i].join();
     }
 }
 
 bool ProcessManager::processThread(string path) {
+    ImgData imgdata;
     ImgData::image_t* img = new ImgData::image_t;
     ImgGrayscaler* imgGrayscaler = new ImgGrayscaler;
     ImgSharpener* imgSharpener = new ImgSharpener;
@@ -60,7 +61,6 @@ bool ProcessManager::processThread(string path) {
     }
 
     // Setup image structure
-    //img->full_path = path;
     img->filename = tokens.back();
     img->out_path = "out\\" + tokens[1]; // staticly sets the output #TODO(waffles_54)
     img->width = 0;
@@ -74,6 +74,9 @@ bool ProcessManager::processThread(string path) {
         std::cerr << "Failed to load " << path << endl;
         return false;
     }
+
+    imgdata.generateMatrix(img); // #TODO refactor this
+
 
     // #TODO Seperate work into threads
     imgSharpener->sharpenImage(img);
@@ -111,7 +114,7 @@ int main(int argc, char* argv[]) {
     if (argc == 1) {
         // No arguments passed
         // Get the directory or image to
-        cout << "Enter a list of files/directories to process\nSeperate entries with a space, Include the extension\n";
+        cout << "Enter a list of files/directories to process\nSeparate entries with a space, Include the extension\n";
         while (userInput.size() == 0) {
             getline(cin, userInput, '\n');
         }
