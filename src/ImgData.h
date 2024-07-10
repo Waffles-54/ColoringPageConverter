@@ -18,13 +18,13 @@ class ImgData
 			string filename;
 			string out_path;
 			unsigned char* imgDataLinear;
-			int** imgDataMatrix;
+			unsigned int** imgDataMatrix;
 			int width;
 			int height;
 			int components;
 		};
 
 		void generateMatrix(image_t* img);
-		void cleanMemory(image_t* img);
+		//void cleanMemory(image_t* img);
 };
 

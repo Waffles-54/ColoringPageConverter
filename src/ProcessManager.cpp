@@ -12,16 +12,14 @@
 #include "ImgSharpener.h"
 
 
-// Pre-Proccessors for stb_image.h
+// Pre-Proccess for stb_image.h
 #define STB_IMAGE_IMPLEMENTATION
-#define STBI_NO_BMP
-#define STBI_NO_PSD
 #define STBI_NO_TGA
 #define STBI_NO_GIF
 #define STBI_NO_HDR
 #define STBI_NO_PIC
 #define STBI_NO_PNM
-#include "../lib/stb_image.h" // #TODO(Waffles_54)
+#include "../lib/stb_image.h"
 
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
@@ -38,6 +36,8 @@ void ProcessManager::initiateThreads(vector<string> paths) {
         work[i].join();
     }
 }
+
+
 
 bool ProcessManager::processThread(string path) {
     ImgData imgdata;
@@ -62,7 +62,7 @@ bool ProcessManager::processThread(string path) {
 
     // Setup image structure
     img->filename = tokens.back();
-    img->out_path = "out\\" + tokens[1]; // staticly sets the output #TODO(waffles_54)
+    img->out_path = "out\\" + tokens[1];
     img->width = 0;
     img->height = 0;
     img->components = 0;
@@ -75,14 +75,13 @@ bool ProcessManager::processThread(string path) {
         return false;
     }
 
-    imgdata.generateMatrix(img); // #TODO refactor this
+    //imgdata.generateMatrix(img); // #TODO refactor this
 
-
-    // #TODO Seperate work into threads
-    imgSharpener->sharpenImage(img);
+    // #TODO Separate work into threads
     imgGrayscaler->grayscaleImage(img);
+
     // Sharpen the image
-    
+    imgSharpener->sharpenImage(img);
     // Clean up blur
     // Edge Detection
     // Thresholding
@@ -138,6 +137,9 @@ int main(int argc, char* argv[]) {
             filepaths.push_back(token);
         }
     }
+
+    // Gemerate output folder if it doesnt exitst
+
     
     // Pass control to the processManager
     processManager.initiateThreads(filepaths);
