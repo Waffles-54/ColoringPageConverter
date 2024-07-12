@@ -3,7 +3,7 @@
   Author: Alice C. Griffith
   Date: 06/2024 - 07/2024
 
-  Description: Class for grayscaling an image
+  Description: Class for gray scaling an image
 */
 
 #include "ImgGrayscaler.h"
@@ -14,14 +14,14 @@ void ImgGrayscaler::grayscaleImage(ImgData::image_t* img) {
 	int avg;
 
 	for (int i = 0; i < pixDensity; i+=img->components) {
-		// Calculate averege pixel value
+		// Calculate average pixel value
 		avg = 0;
 		for (int j = 0; j < img->components; j++) {
 			avg += img->imgDataLinear[i+j];
 		}
 		avg /= img->components;
 
-		// apply pixel avege across all components
+		// apply pixel average across all components
 		for (int j = 0; j < img->components; j++) {
 			img->imgDataLinear[i + j] = avg;
 		}

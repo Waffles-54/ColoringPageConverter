@@ -3,7 +3,7 @@
   Author: Alice C. Griffith
   Date: 06/2024 - 07/2024
 
-  Description: Implentation of ProcessManager.h, Entry point of program, manages workload distribution
+  Description: Implantation of ProcessManager.h, Entry point of program, manages workload distribution
 */
 
 #include "ProcessManager.h"
@@ -75,18 +75,31 @@ bool ProcessManager::processThread(string path) {
         return false;
     }
 
-    //imgdata.generateMatrix(img); // #TODO refactor this
+    
 
     // #TODO Separate work into threads
+    // Grayscale the image (linear formula)
     imgGrayscaler->grayscaleImage(img);
+
+    // Convert the linear structure to a matrix (needed for the rest of the program)
+    imgdata.generateMatrix(img); // #TODO refactor this
 
     // Sharpen the image
     imgSharpener->sharpenImage(img);
     // Clean up blur
     // Edge Detection
     // Thresholding
+    
     // Inversion
 
+   /* for (int i = 2; i < img->height - 1; i++) {
+        for (int j = 2; j < img->width * img->components - 1; j++) {
+            img->imgDataMatrix[i][j] = 0;
+        }
+    }*/
+
+    // Flatten the image
+    imgdata.flattenMatrix(img);
 
     // Output phase
     stbi_write_jpg(img->out_path.c_str(), img->width, img->height, img->components, img->imgDataLinear, 100);

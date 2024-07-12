@@ -7,7 +7,19 @@
 */
 
 #pragma once
+
+#include "ImgData.h"
+
 class ImgEdgeDetector
 {
+	public:
+
+		void detectEdges(ImgData::image_t* img);
+	private:
+		const int sharpKernal[3][3] = {
+			{0, -1, 0},
+			{-1, 5, -1},
+			{0, -1, 0}
+		};
 };
 

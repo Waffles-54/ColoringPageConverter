@@ -8,38 +8,26 @@
 
 #include "ImgData.h"
 
-bool compareArrays(ImgData::image_t* img) {
-    for (int i = 0; i < img->height; i++) {
-        for (int j = 0; j < img->width * img->components; j++) {
-            if (img->imgDataMatrix[i][j] != img->imgDataLinear[i * img->width * img->components + j]) {
-                printf("Mismatch at row %d, col %d: %u != %u\n", i, j, img->imgDataMatrix[i][j], img->imgDataLinear[i * img->width * img->components + j]);
-                return false;
-            }
-        }
-    }
-    return true;
-}
-
 void ImgData::generateMatrix(image_t* img) {
-    // Allocate memory for the 2D array (rows: height)
-    img->imgDataMatrix = (unsigned int**)malloc(img->height * sizeof(unsigned int*));
-    if (img->imgDataMatrix == NULL) {
-        fprintf(stderr, "Memory allocation failed for imgDataMatrix.\n");
-        exit(1);
+    // Convert to thread function #TODO
+    if (img == NULL) {
+        exit(-1);
     }
 
+    // Allocate memory for the 2D array (rows: height)
+    img->imgDataMatrix = (unsigned char**)malloc(img->height * sizeof(unsigned char*));
+    
     for (int i = 0; i < img->height; i++) {
-        // Allocate memory for each row (columns: width * components)
-        img->imgDataMatrix[i] = (unsigned int*)malloc(img->width * img->components * sizeof(unsigned int));
-        if (img->imgDataMatrix[i] == NULL) {
-            fprintf(stderr, "Memory allocation failed for imgDataMatrix[%d].\n", i);
-            exit(1);
-        }
-
-        // Copy the row data from the 1D array to the 2D array
-        memcpy(img->imgDataMatrix[i], img->imgDataLinear + (i * img->width * img->components), img->width * img->components * sizeof(unsigned int));
+        img->imgDataMatrix[i] = (unsigned char*)malloc(img->width * img->components * sizeof(unsigned char));
+        unsigned int offset = i * img->width * img->components;
+        memcpy(img->imgDataMatrix[i], img->imgDataLinear + offset, img->width * img->components * sizeof(unsigned char));
     }
 }
 
-
-
+void ImgData::flattenMatrix(image_t* img) {
+    for (int i = 0; i < img->height; i++) {
+        // In-Place replacement (Avoids memory leaks)
+        int offset = i * img->width * img->components;
+        memcpy(img->imgDataLinear + offset, img->imgDataMatrix[i], img->width * img->components * sizeof(unsigned char));
+    }
+}
