@@ -10,6 +10,8 @@
 #include "ImgData.h"
 #include "ImgGrayscaler.h"
 #include "ImgSharpener.h"
+#include "ImgEdgeDetector.h"
+#include "ImgThresholder.h"
 
 
 // Pre-Proccess for stb_image.h
@@ -41,6 +43,8 @@ void ProcessManager::initiateThreads(vector<string> paths) {
 
 bool ProcessManager::processThread(string path) {
     ImgData imgdata;
+    ImgThresholder imgThresholder;
+    ImgEdgeDetector imgEdgeDetector;
     ImgData::image_t* img = new ImgData::image_t;
     ImgGrayscaler* imgGrayscaler = new ImgGrayscaler;
     ImgSharpener* imgSharpener = new ImgSharpener;
@@ -86,20 +90,15 @@ bool ProcessManager::processThread(string path) {
 
     // Sharpen the image
     imgSharpener->sharpenImage(img);
-    // Clean up blur
+
     // Edge Detection
-    // Thresholding
+    imgEdgeDetector.detectEdges(img);
     
-    // Inversion
-
-   /* for (int i = 2; i < img->height - 1; i++) {
-        for (int j = 2; j < img->width * img->components - 1; j++) {
-            img->imgDataMatrix[i][j] = 0;
-        }
-    }*/
-
     // Flatten the image
     imgdata.flattenMatrix(img);
+
+    // Thresholding / Inversion
+    imgThresholder.applyThreshold(img);
 
     // Output phase
     stbi_write_jpg(img->out_path.c_str(), img->width, img->height, img->components, img->imgDataLinear, 100);

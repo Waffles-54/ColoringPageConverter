@@ -16,10 +16,10 @@ class ImgEdgeDetector
 
 		void detectEdges(ImgData::image_t* img);
 	private:
-		const int sharpKernal[3][3] = {
-			{0, -1, 0},
-			{-1, 5, -1},
-			{0, -1, 0}
+		const int edgeKernal[3][3] = {
+			{-1, -1, -1},
+			{-1,  8, -1},
+			{-1, -1, -1}
 		};
 };
 

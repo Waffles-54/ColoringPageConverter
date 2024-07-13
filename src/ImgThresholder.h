@@ -7,7 +7,14 @@
 */
 
 #pragma once
+
+#include "ImgData.h"
+
+#define THRESHOLD 200
+
 class ImgThresholder
 {
+	public:
+		void applyThreshold(ImgData::image_t* img);
 };
 

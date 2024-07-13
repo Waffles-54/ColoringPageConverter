@@ -35,9 +35,6 @@ void ImgSharpener::sharpenImage(ImgData::image_t* img) {
                 }
             }
 
-            // Average the result?
-            //sum /= 9; // #TODO: Magic (#)
-
             // Clamp the result to ensure it fits within 0-255
             matrixOut[y][x] = std::min(std::max(sum, 0), 255);
         }
@@ -47,7 +44,6 @@ void ImgSharpener::sharpenImage(ImgData::image_t* img) {
         for (int j = 1; j < img->width * img->components - 1; j++) {
             img->imgDataMatrix[i][j] = matrixOut[i][j];
         }
-        //int x = 1; x < img->width* img->components - 1; x++
     }
 
     for (int i = 0; i < img->height; ++i) {
