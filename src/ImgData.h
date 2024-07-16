@@ -23,9 +23,5 @@ class ImgData
 			int height;
 			int components;
 		};
-
-		void generateMatrix(image_t* img);
-		void flattenMatrix(image_t* img);
-		//void cleanMemory(image_t* img);
 };
 

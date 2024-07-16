@@ -9,9 +9,8 @@
 #include "ProcessManager.h"
 #include "ImgData.h"
 #include "ImgGrayscaler.h"
-#include "ImgSharpener.h"
-#include "ImgEdgeDetector.h"
 #include "ImgThresholder.h"
+#include "ApplyMatrix.h"
 
 
 // Pre-Proccess for stb_image.h
@@ -24,7 +23,7 @@
 #include "../lib/stb_image.h"
 
 #define STB_IMAGE_WRITE_IMPLEMENTATION
-#include "stb_image_write.h"
+#include "../lib/stb_image_write.h"
 
 void ProcessManager::initiateThreads(vector<string> paths) {
     vector<thread> work;
@@ -39,15 +38,10 @@ void ProcessManager::initiateThreads(vector<string> paths) {
     }
 }
 
-
-
 bool ProcessManager::processThread(string path) {
-    ImgData imgdata;
     ImgThresholder imgThresholder;
-    ImgEdgeDetector imgEdgeDetector;
-    ImgData::image_t* img = new ImgData::image_t;
-    ImgGrayscaler* imgGrayscaler = new ImgGrayscaler;
-    ImgSharpener* imgSharpener = new ImgSharpener;
+    ApplyMatrix applyMatrix;
+    ImgGrayscaler imgGrayscaler;
 
     // Tokenize path (ext/filename)
     string token;
@@ -65,46 +59,39 @@ bool ProcessManager::processThread(string path) {
     }
 
     // Setup image structure
-    img->filename = tokens.back();
-    img->out_path = "out\\" + tokens[1];
-    img->width = 0;
-    img->height = 0;
-    img->components = 0;
+    ImgData::image_t img;
+    img.filename = tokens.back();
+    img.out_path = "out\\" + tokens[1];
+    img.width = 0;
+    img.height = 0;
+    img.components = 0;
 
     // Read phase
-    img->imgDataLinear = stbi_load(path.c_str(), &img->width, &img->height, &img->components, 0);
+    img.imgDataLinear = stbi_load(path.c_str(), &img.width, &img.height, &img.components, 0);
 
-    if (img->imgDataLinear == nullptr) {
+    if (img.imgDataLinear == nullptr) {
         std::cerr << "Failed to load " << path << endl;
         return false;
     }
-
     
-
     // #TODO Separate work into threads
     // Grayscale the image (linear formula)
-    imgGrayscaler->grayscaleImage(img);
+    imgGrayscaler.grayscaleImage(&img);
 
-    // Convert the linear structure to a matrix (needed for the rest of the program)
-    imgdata.generateMatrix(img); // #TODO refactor this
-
-    // Sharpen the image
-    imgSharpener->sharpenImage(img);
-
-    // Edge Detection
-    imgEdgeDetector.detectEdges(img);
-    
-    // Flatten the image
-    imgdata.flattenMatrix(img);
+    // Convert the linear structure to a matrix (needed for applying a matrix)
+    applyMatrix.generateMatrix(&img);
+    applyMatrix.apply(&img, applyMatrix.sharpKernal);
+    applyMatrix.apply(&img, applyMatrix.edgeKernal);
+    applyMatrix.flattenMatrix(&img);
 
     // Thresholding / Inversion
-    imgThresholder.applyThreshold(img);
+    imgThresholder.applyThreshold(&img);
 
     // Output phase
-    stbi_write_jpg(img->out_path.c_str(), img->width, img->height, img->components, img->imgDataLinear, 100);
+    stbi_write_jpg(img.out_path.c_str(), img.width, img.height, img.components, img.imgDataLinear, 100);
     
     // Cleanup phase
-    stbi_image_free(img->imgDataLinear);
+    stbi_image_free(img.imgDataLinear);
     return true;
 }
 
@@ -150,9 +137,6 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    // Gemerate output folder if it doesnt exitst
-
-    
     // Pass control to the processManager
     processManager.initiateThreads(filepaths);
     return 0;

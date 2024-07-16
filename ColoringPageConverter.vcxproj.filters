@@ -21,22 +21,19 @@
     <ClInclude Include="src\ImgThresholder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ImgSharpener.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\ImgInverter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\ImgGrayscaler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ImgEdgeDetector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="lib\stb_image_write.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\imgData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ApplyMatrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -47,22 +44,19 @@
     <ClCompile Include="src\ImgThresholder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ImgSharpener.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\ImgInverter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\ImgGrayscaler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ImgEdgeDetector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="lib\stb_image.h">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\imgData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ApplyMatrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
