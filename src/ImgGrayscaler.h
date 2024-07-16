@@ -3,7 +3,7 @@
   Author: Alice C. Griffith
   Date: 06/2024 - 07/2024
 
-  Description: Class for grayscaling an image
+  Description: Class for applying a grayscale filter over an image
 */
 
 #pragma once
@@ -14,4 +14,3 @@ class ImgGrayscaler
 	public:
 		void grayscaleImage(ImgData::image_t* img);
 };
-

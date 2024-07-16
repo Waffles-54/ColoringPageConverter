@@ -3,7 +3,7 @@
   Author: Alice C. Griffith
   Date: 06/2024 - 07/2024
 
-  Description: Class for grayscaling an image
+  Description: Structure for managing images in this program
 */
 
 #pragma once

@@ -3,7 +3,7 @@
   Author: Alice C. Griffith
   Date: 06/2024 - 07/2024
 
-  Description: Class for gray scaling an image
+  Description: Class for applying a grayscale filter over an image
 */
 
 #include "ImgGrayscaler.h"

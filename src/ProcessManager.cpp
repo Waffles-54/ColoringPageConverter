@@ -70,7 +70,7 @@ bool ProcessManager::processThread(string path) {
     img.imgDataLinear = stbi_load(path.c_str(), &img.width, &img.height, &img.components, 0);
 
     if (img.imgDataLinear == nullptr) {
-        std::cerr << "Failed to load " << path << endl;
+        //std::cerr << "Failed to load " << path << endl;
         return false;
     }
     
@@ -78,13 +78,15 @@ bool ProcessManager::processThread(string path) {
     // Grayscale the image (linear formula)
     imgGrayscaler.grayscaleImage(&img);
 
-    // Convert the linear structure to a matrix (needed for applying a matrix)
+    //// Convert the linear structure to a matrix (needed for applying a matrix)
     applyMatrix.generateMatrix(&img);
-    applyMatrix.apply(&img, applyMatrix.sharpKernal);
-    applyMatrix.apply(&img, applyMatrix.edgeKernal);
+    applyMatrix.apply(&img, applyMatrix.sharpKernal2);
+    applyMatrix.apply(&img, applyMatrix.sobelVert);
+    applyMatrix.apply(&img, applyMatrix.sobelHor);
+    //applyMatrix.apply(&img, applyMatrix.sharpKernal2);
     applyMatrix.flattenMatrix(&img);
 
-    // Thresholding / Inversion
+    //// Thresholding / Inversion
     imgThresholder.applyThreshold(&img);
 
     // Output phase
@@ -105,8 +107,8 @@ int main(int argc, char* argv[]) {
     vector<string> filepaths;
 
     // Debugging data
-    unsigned int badReads = 0;  // Track how many files failed to load
-    vector<string> badFiles;
+    //unsigned int badReads = 0;  // Track how many files failed to load
+    //vector<string> badFiles;
 
 
     if (argc == 1) {
