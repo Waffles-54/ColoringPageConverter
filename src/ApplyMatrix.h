@@ -3,24 +3,17 @@
 #include "ImgData.h"
 #include <vector> 
 
+#define THRESHOLD 225
+
+
 // #TODO, Consider mergeing this class with ImgData, its so closely tied that splitting
 // the class is creating external coupling
 class ApplyMatrix {
 	public:
         // Kernals
         const vector<vector<int>> sharpKernal = {
-            {0, -1, 0},
-            {-1, 5, -1},
-            {0, -1, 0}
-        };
-        const vector<vector<int>> sharpKernal2 = {
             {-1, -1, -1},
             {-1,  9, -1},
-            {-1, -1, -1}
-        };
-        const vector<vector<int>> edgeKernal = {
-            {-1, -1, -1},
-            {-1,  8, -1},
             {-1, -1, -1}
         };
         const vector<vector<int>> sobelVert = {
@@ -42,6 +35,10 @@ class ApplyMatrix {
         // Application Functions
         void generateMatrix(ImgData::image_t* img);
         void flattenMatrix(ImgData::image_t* img);
+        void fillEdges(ImgData::image_t* img);
 		void apply(ImgData::image_t* img, const vector<vector<int>>& kernel);
+        void fixSpices(ImgData::image_t* img);
+
+
 };
 

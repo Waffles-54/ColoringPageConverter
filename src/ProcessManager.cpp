@@ -80,14 +80,16 @@ bool ProcessManager::processThread(string path) {
 
     //// Convert the linear structure to a matrix (needed for applying a matrix)
     applyMatrix.generateMatrix(&img);
-    applyMatrix.apply(&img, applyMatrix.sharpKernal2);
+    //applyMatrix.apply(&img, applyMatrix.sharpKernal);
+    applyMatrix.apply(&img, applyMatrix.ridgeKernal);
     applyMatrix.apply(&img, applyMatrix.sobelVert);
     applyMatrix.apply(&img, applyMatrix.sobelHor);
-    //applyMatrix.apply(&img, applyMatrix.sharpKernal2);
+    applyMatrix.fillEdges(&img);
     applyMatrix.flattenMatrix(&img);
+    applyMatrix.fixSpices(&img);
 
     //// Thresholding / Inversion
-    imgThresholder.applyThreshold(&img);
+    //imgThresholder.applyThreshold(&img);
 
     // Output phase
     stbi_write_jpg(img.out_path.c_str(), img.width, img.height, img.components, img.imgDataLinear, 100);
@@ -99,7 +101,7 @@ bool ProcessManager::processThread(string path) {
 
 // Entry point of the program
 int main(int argc, char* argv[]) {
-        
+
     // Data setup
     ProcessManager processManager;
 

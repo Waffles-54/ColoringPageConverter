@@ -27,7 +27,7 @@ void ApplyMatrix::apply(ImgData::image_t* img, const vector<vector<int>>& kernel
         }
     }
 
-    // relpace the original matrix with the calculated data
+    // replace the original matrix with the calculated data
     for (int i = 1; i < img->height - 1; i++) {
         for (int j = 1; j < img->width * img->components - 1; j++) {
             img->imgDataMatrix[i][j] = matrixOut[i][j];
@@ -63,5 +63,44 @@ void ApplyMatrix::flattenMatrix(ImgData::image_t* img) {
         // In-Place replacement
         int offset = i * img->width * img->components;
         memcpy(img->imgDataLinear + offset, img->imgDataMatrix[i], img->width * img->components * sizeof(unsigned char));
+    }
+}
+
+void ApplyMatrix::fillEdges(ImgData::image_t* img) {
+    /*for (int i = 0; i < img->width * img->components; i++) {
+        img->imgDataMatrix[0][i] = 0;
+    }*/
+    memset(img->imgDataMatrix[0], 0, img->width * img->components);
+    memset(img->imgDataMatrix[1], 0, img->width * img->components);
+    memset(img->imgDataMatrix[img->height - 2], 0, img->width * img->components);
+    memset(img->imgDataMatrix[img->height - 1], 0, img->width * img->components);
+    for (int i = 2; i < img->height - 2; i++) {
+        // first x elements in row
+        img->imgDataMatrix[i][0] = 0;
+        img->imgDataMatrix[i][1] = 0;
+        img->imgDataMatrix[i][2] = 0;
+        // last x elements in row
+        img->imgDataMatrix[i][img->width * img->components - 1] = 0;
+        img->imgDataMatrix[i][img->width * img->components - 2] = 0;
+        img->imgDataMatrix[i][img->width*img->components - 3] = 0;
+
+    }
+}
+
+void ApplyMatrix::fixSpices(ImgData::image_t* img) {
+    int pixDensity = img->height * img->width * img->components;
+    int val;
+    for (int i = 0; i < pixDensity; i += img->components) {
+        val = 255;
+        for (int j = 0; j < img->components; j++) {
+            if (img->imgDataLinear[i + j] > THRESHOLD) {
+                val = 0;
+            }
+        }
+
+        // apply pixel average across all components
+        for (int j = 0; j < img->components; j++) {
+            img->imgDataLinear[i + j] = val;
+        }
     }
 }
